@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  at-emulator:
+    build: .
+    container_name: at-emulator
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - WORKERS=4
+      - MAX_CONNECTIONS=10
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./config:/config
+
+  # Example Node.js client
+  node-client:
+    build:
+      context: ./examples/node
+      dockerfile: Dockerfile
+    depends_on:
+      - at-emulator
+    environment:
+      - SERIAL_PORT=/dev/ttyS0
+    tty: true
+    stdin_open: true

@@ -1,0 +1,14 @@
+{
+  "name": "at-emulator-node-example",
+  "version": "1.0.0",
+  "description": "Node.js example for AT-Emulator",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "readline": "^1.3.0"
+  },
+  "license": "MIT"
+}

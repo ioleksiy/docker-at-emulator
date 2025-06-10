@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Node.js
+node_modules
+npm-debug.log
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker
+Dockerfile
+.dockerignore
+
+# GitHub Actions
+.github
+
+# Local development
+.env
+*.local
+
+# Logs
+logs
+*.log
+
+# Build output
+build/
+dist/
+
+# Example directories
+examples/
