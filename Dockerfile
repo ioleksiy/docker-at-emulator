@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3.8.6-jdk-11 AS builder
+FROM maven:3.8.6-eclipse-temurin-11 AS builder
 
 # Clone and build the AT-Emulator
 RUN git clone https://github.com/celersms/AT-Emulator.git /src
@@ -8,7 +8,7 @@ RUN mkdir -p target/classes/com/celer/emul
 RUN javac -d target/classes src/com/celer/emul/AT.java
 
 # Final stage
-FROM openjdk:11-jre-slim
+FROM eclipse-temurin:11-jre
 
 # Install required packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
